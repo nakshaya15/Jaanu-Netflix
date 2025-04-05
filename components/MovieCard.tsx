@@ -13,7 +13,6 @@ const MovieCard:React.FC<CardProps> =({title,image,desc}) => {
             <img src={image} alt={title}/>
             <p>{desc.substring(0,100)}...</p>
             <button className = "fav-button">Like</button>
-
         </div>
     );
 };

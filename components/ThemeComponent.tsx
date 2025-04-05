@@ -15,6 +15,9 @@ useEffect(()=>{
     const header = document.getElementById("app-header");
     const filtersContainer = document.querySelector(".filters"); //entire filters div
     const filters = document.querySelectorAll("filters label"); //individual labels
+    if (header){
+        header.style.color=darkMode?"white" :"black";
+    }
 
     if (filtersContainer){
         (filtersContainer as HTMLElement).style.background = darkMode ? "#292929" : "#ddd";
@@ -25,13 +28,11 @@ useEffect(()=>{
     });
 }, [darkMode]);
     return(
-        <button onClick={() => setDarkMode (!darkMode)}>
+        <button  className =" themeToggle" onClick={() => setDarkMode (!darkMode)}>
 
             {darkMode ? "Light Mode" :  "Dark Mode"}
-
             </button>
     );
-
         };
 
-        export default ThemeToggle;
+    export default ThemeToggle;

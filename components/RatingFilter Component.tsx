@@ -1,18 +1,22 @@
 import React, {useState} from "react";
+type Props={
+    rating:string;
+    setRatingFilter:(rating:string)=>void;
+}
 
-const RatingFilter: React.FC = () => {
-    const[rating, setRating] = useState("");
+const RatingFilter: React.FC<Props>=({rating,setRatingFilter})=>{
+    const ratings=["Flop","Average","Hit","Super Hit","Blockbuster"];
 
     return(
         <div>
             <h4>Filter By Rating</h4>
-            {["Flop", "Average", "Hit", "Super Hit", "Blockbuster"].map((rate) => (
-                <label key = {rate}>
+            {ratings.map((rate)=>(
+                <label key = {rate} style={{marginRight:"10px"}}>
                     <input
                     type="radio"
                     value={rate}
                     checked= {rating === rate}
-                    onChange={(e) => setRating(e.target.value)}
+                    onChange={(e) => setRatingFilter(e.target.value)}
                     
                     />
                      {rate}

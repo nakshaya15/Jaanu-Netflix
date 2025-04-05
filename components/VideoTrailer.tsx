@@ -2,15 +2,13 @@ import React from "react";
 import Intersteller from "../assets/Interstellar.mp4";
 
 const MovieTrailer: React.FC = () => {
-  
-
   return (
     <div
       className="trailer">
       <video
         autoPlay
-       // muted
-        playsInline
+        muted
+       // playsInline
         loop
         style={{
           width: "100%",

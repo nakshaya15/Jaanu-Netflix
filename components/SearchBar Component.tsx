@@ -8,7 +8,7 @@ const SearchBar: React.FC = () => {
     const dispatch = useDispatch();
     const handleSerach=(e:React.FormEvent)=>{
         e.preventDefault();
-        dispatch(fetchMovies());
+        dispatch(fetchMovies(query));
     };
 
 
